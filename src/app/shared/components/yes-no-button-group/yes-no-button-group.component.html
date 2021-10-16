@@ -1,0 +1,36 @@
+<div
+  appKm
+  role="radiogroup"
+  [attr.aria-labelledby]="id"
+  class="button-group"
+  >
+  <label [attr.id]="id" class="label">{{ label }}</label>
+  <button
+    appKmItem
+    (focused)="activate(options.SIM)"
+    role="radio"
+    [attr.disabled]="disabled ? disabled : null"
+    [attr.aria-checked]="value === options.SIM"
+    [attr.tabindex]="value === options.SIM || value === null ? 0 : -1"
+    class="button button-yes"
+    type="button"
+    [class.button-pressed]="value === options.SIM"
+    (click)="activate(options.SIM)"
+  >
+    SIM
+  </button>
+  <button
+    appKmItem
+    (focused)="activate(options.NAO)"
+    role="radio"
+    [attr.disabled]="disabled ? disabled : null"
+    [attr.aria-checked]="value === options.NAO"
+    [attr.tabindex]="value === options.NAO ? 0 : -1"
+    class="button button-no"
+    type="button"
+    [class.button-pressed]="value === options.NAO"
+    (click)="activate(options.NAO)"
+  >
+    NÃO
+  </button>
+</div>
